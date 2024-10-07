@@ -1,0 +1,26 @@
+#core-concepts {
+    padding: 2rem;
+    border-radius: 6px;
+    background-color: #140524;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    color: white;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+  
+  }
+  
+  li{
+    list-style-type:none;
+    flex: 0 0 50%; /* Adjust to set column size */
+    box-sizing: border-box;
+    padding: 10px;
+    border: 1px solid #ccc;
+  }
+  
+  ul{
+    /* columns: 4; */
+    width: 500px;
+    display: flex;
+    flex-wrap: wrap;
+  }

@@ -1,0 +1,77 @@
+.App {
+  text-align: center;
+}
+
+body{
+  background-color: rgb(0, 0, 0);
+  color: whitesmoke;
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+}
+
+.header h1{
+  font-size: 50px;
+  font-family: 'Times New Roman', Times, serif;
+  padding-top: 2%;
+}
+
+.InputBox{
+  margin-top: 5%;
+  width : auto;
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns */
+  gap: 20px; /* space between items */
+  align-items: center; 
+  justify-content: center;
+  background-color: rgba(9, 119, 91, 0.7);
+  padding: 50px;
+  border-radius: 10px;
+  box-shadow: 2px green;
+}
+.field {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr); /* 2 columns */
+  align-items: center; 
+  justify-content: center;
+  font-family: 'Times New Roman', Times, serif;
+}
+.field label{
+  font-size: 30px;
+  padding: 10px;
+  margin: 10px;
+}
+
+.field input{
+  font-size: 40px;
+  padding: 15px;
+  margin: 15px;
+  border: double rgba(255, 255, 255, 0.554) 2px;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0);
+  color: whitesmoke;
+}
+
+.output-table{
+  display: grid;
+  /* grid-template-columns: repeat(5, 1fr);  */
+  align-items: center; 
+  justify-content: center;
+  font-family: 'Times New Roman', Times, serif;
+  margin: 20px;
+}
+
+.output-table tr{
+  padding: 10px;
+  margin :10px;
+  text-align: left;
+}
+
+.output-table th,td{
+  width : 450px;
+  font-size: 30px;
+  background-color: rgba(240, 255, 255, 0.2);
+  padding: 10px;
+  margin :10px;
+}

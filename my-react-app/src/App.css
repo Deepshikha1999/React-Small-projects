@@ -1,0 +1,95 @@
+.App {
+    text-align: center;
+  }
+  
+  .App-logo {
+    height: 40vmin;
+    pointer-events: none;
+  }
+  
+  @media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+      animation: App-logo-spin infinite 20s linear;
+    }
+  }
+  
+  .App-header {
+    background-color: #140524;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+  }
+  
+  .App-link {
+    color: #61dafb;
+  }
+  
+  @keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+#examples{
+  align-items: left;
+  justify-content: left;
+  display: flex;
+  background-color:  #140524;
+  height: auto;
+}
+#examples .menu button{
+  width: 150px;
+  height: 50px;
+  /* background-color: bisque; */
+}
+#examples .menu button:hover{
+  background-color: black;
+  color: wheat;
+}
+
+#examples .menu button:active{
+  background-color: rgb(49, 49, 134);
+  color: wheat;
+}
+
+.tempHeader{
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  color: white;
+}
+
+.content {
+  border: 2px;
+  padding: 20px;
+  background-color: #140524;
+  width: 80%;
+  margin: 20px auto;
+  color: whitesmoke;
+}
+.content h3 {
+  margin-top: 0;          /* Remove the top margin */
+}
+.content pre {
+  background-color: burlywood; /* Background color for code */
+  color: black;            /* Text color for code */
+  padding: 10px;          /* Padding for code */
+  border-radius: 5px;     /* Rounded corners for code block */
+  overflow-x: auto;       /* Enable horizontal scrolling if needed */
+}
+
+.nothing{
+  border: 2px;
+  padding: 20px;
+  background-color: #140524;
+  width: 80%;
+  margin: 20px auto;
+  color: whitesmoke;
+}
