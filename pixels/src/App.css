@@ -1,0 +1,32 @@
+.App {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  height: 100vh; /* Full viewport height for vertical centering */
+}
+
+.board{
+  height: 100vh;
+  width : 100%;
+  background-color: black;
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  cursor: -webkit-grabbing;
+}
+
+.pixel{
+  height:0.5vh;
+  width:0.5vh;
+  background-color: white;
+}
+
+.pixel:hover{
+  background-color: aqua;
+}
+
+.pixel-active{
+  height:0.5vh;
+  width:0.5vh;
+  background-color: blue;
+}
