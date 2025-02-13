@@ -1,0 +1,51 @@
+.geometry {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  grid-template-rows: repeat(1, 1fr); /* 1 rows */
+  place-items: center; /* Centers items both horizontally and vertically */
+  height: 100vh; /* Fullscreen */
+  gap: 5px;
+}
+.shapes{
+  height:30vh;
+  width:30vh;
+  border: 0.1em black dashed;
+  background-color:ghostwhite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pixel{
+  width: 10px;
+  height: 10px;
+  background-color: white;
+  border-radius: 0%; /* Makes pixels look like drops */
+}
+
+.Rectangle{
+  display: grid;
+  grid-template-columns: repeat(20, 1fr); /* 20 columns */
+  grid-template-rows: repeat(10, 1fr); /* 10 rows */
+}
+
+.Circle{
+  display: grid;
+  grid-template-columns: repeat(10, 1fr); /* 10 columns */
+  grid-template-rows: repeat(10, 1fr); /* 10 rows */
+}
+
+.Triangle{
+  display: grid;
+  grid-template-columns: repeat(15, 1fr); /* 15 columns */
+  grid-template-rows: repeat(15, 1fr); /* 15 rows */
+}
+
+.FibonacciSpiral{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top:300px;
+  left:800px;
+}
