@@ -1,0 +1,26 @@
+.App {
+  display: flex;
+  justify-content: center;
+
+  height: 100vh; /* Fullscreen */
+  overflow: hidden; /* Prevent scrolling */
+  background-color: black; /* Dark mode */
+}
+
+.pixeldrop {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2px;
+  position: absolute;
+  width: 100%;
+}
+
+.pixel {
+  width: 1px;
+  height: 1px;
+  background-color: white;
+  border-radius: 50%; /* Makes pixels look like drops */
+}
+
+/*   align-items: center; */
