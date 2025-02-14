@@ -4,7 +4,7 @@ import gameOverGif from "../assets/gameOver.gif";
 
 const ResultDialog = forwardRef(({ gameOverStatus, score, message, onReset }, ref) => {
     const dialog = useRef(null);
-
+    console.log(score)
     useImperativeHandle(ref, () => ({
         open() {
             if (dialog.current) {

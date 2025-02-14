@@ -3,7 +3,7 @@ import Bird from "./FlappyBirdComponents/Bird";
 import Clouds from "./FlappyBirdComponents/Clouds";
 import Walls from "./FlappyBirdComponents/Walls";
 
-export default function FlappyBird({ setStatus,setScore,setMessage }) {
+export default function FlappyBird({ setStatus,setScore,setMessage,startGame }) {
     const birdRef = useRef(null);
     const [pos, setPos] = useState(100);
     const [clouds, setClouds] = useState([]);
@@ -104,7 +104,7 @@ export default function FlappyBird({ setStatus,setScore,setMessage }) {
     // console.log("Cloud Refs Assigned:", cloudsRef.current);
     return (
         <div className="GameBoard">
-            <Bird birdRef={birdRef} />
+            {startGame && <Bird birdRef={birdRef} />}
             {/* Render Walls with refs */}
             {walls.map((wall, i) => (
                 <Walls
