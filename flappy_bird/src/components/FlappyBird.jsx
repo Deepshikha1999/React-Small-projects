@@ -3,18 +3,17 @@ import Bird from "./FlappyBirdComponents/Bird";
 import Clouds from "./FlappyBirdComponents/Clouds";
 import Walls from "./FlappyBirdComponents/Walls";
 
-export default function FlappyBird({ setStatus,setScore,setMessage,startGame }) {
+export default function FlappyBird({ setStatus, setScore, setMessage, startGame }) {
     const birdRef = useRef(null);
     const [pos, setPos] = useState(100);
     const [clouds, setClouds] = useState([]);
     const [walls, setWalls] = useState([]);
-
     const cloudsRef = useRef([]); // Store refs for clouds
     const wallsRef = useRef([]); // Store refs for walls
 
     // Generate walls
     useEffect(() => {
-        const generatedWalls = Array.from({ length: Math.floor(window.innerWidth / 200) }, (_, i) => ({
+        const generatedWalls = Array.from({ length: Math.floor(window.innerWidth / 100) }, (_, i) => ({
             id: i,
             left: i * 200,
         }));
@@ -23,10 +22,11 @@ export default function FlappyBird({ setStatus,setScore,setMessage,startGame }) 
 
     // Generate clouds
     useEffect(() => {
-        const generatedClouds = Array.from({ length: Math.floor(window.innerWidth / 350) }, (_, i) => ({
+        const generatedClouds = Array.from({ length: Math.floor(window.innerWidth / 200) }, (_, i) => ({
             id: i,
-            left: i * 350,
-            top: Math.floor(Math.random() * 300),
+            left: i * 200,
+            top: i<3?i*10:Math.floor(Math.random() * 200),
+            // animation: `moveClouds ${Math.floor(Math.random() * 10)}s infinite alternate ease-in-out`
         }));
         setClouds(generatedClouds);
     }, []);
@@ -53,7 +53,7 @@ export default function FlappyBird({ setStatus,setScore,setMessage,startGame }) 
             const gameBoardRect = document.querySelector(".GameBoard").getBoundingClientRect();
 
             // 🚨 **Check if the bird goes out of screen (top or bottom)**
-            if (birdRect.top <= gameBoardRect.top || birdRect.bottom >= gameBoardRect.bottom || birdRect.left <= gameBoardRect.left || birdRect.right >= gameBoardRect.right) {
+            if (birdRect.top < gameBoardRect.top || birdRect.bottom > gameBoardRect.bottom || birdRect.left < gameBoardRect.left || birdRect.right > gameBoardRect.right) {
                 console.log("Game Over - Out of Screen");
                 setMessage("YOU WIN")
                 setStatus(true)
@@ -65,10 +65,10 @@ export default function FlappyBird({ setStatus,setScore,setMessage,startGame }) 
                 if (cloud) {
                     const cloudRect = cloud.getBoundingClientRect();
                     if (
-                        birdRect.left <= cloudRect.right &&
-                        birdRect.right >= cloudRect.left &&
-                        birdRect.top <= cloudRect.bottom &&
-                        birdRect.bottom >= cloudRect.top
+                        birdRect.right > cloudRect.left && 
+                        birdRect.left < cloudRect.right && 
+                        birdRect.bottom > cloudRect.top+100 && 
+                        birdRect.top < cloudRect.bottom-100
                     ) {
                         console.log("Game Over - Cloud Collision");
                         setMessage("Ooouuuchhh Clouds")
@@ -84,10 +84,10 @@ export default function FlappyBird({ setStatus,setScore,setMessage,startGame }) 
                 if (wall) {
                     const wallRect = wall.getBoundingClientRect();
                     if (
-                        birdRect.left <= wallRect.right &&
-                        birdRect.right >= wallRect.left &&
-                        birdRect.top <= wallRect.bottom &&
-                        birdRect.bottom >= wallRect.top
+                        birdRect.left < wallRect.right &&
+                        birdRect.right > wallRect.left &&
+                        birdRect.top < wallRect.bottom &&
+                        birdRect.bottom > wallRect.top
                     ) {
                         console.log("Game Over - Wall Collision");
                         setMessage("Ooouuuchhh these walls")
@@ -123,7 +123,9 @@ export default function FlappyBird({ setStatus,setScore,setMessage,startGame }) 
             {clouds.map((cloud, i) => (
                 <Clouds
                     key={cloud.id}
-                    ref={(el) => (cloudsRef.current[i] = el)}
+                    ref={(el) => {
+                        if (el) cloudsRef.current[i] = el;
+                    }}
                     stylesheet={{
                         position: "absolute",
                         top: `${cloud.top}px`,

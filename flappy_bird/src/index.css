@@ -20,42 +20,55 @@ body {
   min-width: 320px;
   min-height: 100vh;
   overflow: hidden;
-  background-color: rgb(108, 203, 247);
+  /* background-color: rgb(108, 203, 247); */
   background-image: url("./assets/day_light.jpg");
-  background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;   /* Ensures the image covers the entire screen */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents repeating */
+  width: 100vw;  /* Full viewport width */
+  height: 100vh; /* Full viewport height */
+  overflow: hidden; /* Prevents scrolling */
 }
+
 
 .result-modal {
   border: none;
   border-radius: 8px;
-  padding: 2rem;
+  padding: 4vh;
   background: linear-gradient(#133570, #4df0f8);
   display: block;
   margin: auto;
-  /* position: relative;
-  height : 50vh */
+  height: 45vh;
+  width: 40vw; /* Scales width based on viewport */
+  max-width: 600px; /* Prevents it from getting too wide */
   font-family: 'Quicksand', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
+/* Animation for opening */
 .result-modal[open] {
   animation: slide-in-from-top 0.35s ease-out;
 }
 
+/* Dark background when modal is open */
 .result-modal::backdrop {
   background: rgba(0, 0, 0, 0.9);
 }
 
+/* Headings - Responsive */
 .result-modal h2 {
   font-family: 'Handjet', monospace;
   margin: 0 0 0.25rem 0;
-  font-size: 3rem;
+  font-size: 1.5rem;
   text-transform: uppercase;
   text-align: center;
 }
 
+/* Progress Bar */
 .result-modal progress {
   width: 100%;
   height: 1.5rem;
@@ -63,37 +76,88 @@ body {
   accent-color: #46cebe;
 }
 
+/* Paragraphs - Scale Down on Small Screens */
 .result-modal p {
   margin: 0.5rem 0;
-  font-size: 1.2rem;
+  font-size: 1.5rem; /* Default size */
 }
 
-/* .result-modal img {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-} */
-
+/* Highlighted Text */
 .result-modal p strong {
   color: #10655b;
 }
 
+/* Form Buttons */
 .result-modal form {
   text-align: right;
 }
 
+/* Button Styles */
 .result-modal button {
   margin-top: 1rem;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 1rem; /* Bigger buttons */
   border: none;
   border-radius: 10px;
   background: #12352f;
   color: #edfcfa;
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+  align-items: center;
 }
 
 .result-modal button:hover {
   background: #051715;
+  transform: scale(1.05);
+}
+
+.result-modal img {
+  height: 20vh;
+  display: block;
+  margin: auto;
+}
+
+
+/* ✅ Responsive Adjustments for Smaller Screens */
+@media (max-width: 768px) {
+  .result-modal {
+    width: 90vw;  /* Takes more space on small screens */
+    height: 60vh; /* Adjust height */
+    padding: 4vh;
+  }
+
+  .result-modal h2 {
+    font-size: 2.5rem;
+  }
+
+  .result-modal p {
+    font-size: 1.2rem;
+  }
+
+  .result-modal button {
+    font-size: 2rem;
+    padding: 0.75rem 1.5rem;
+  }
+}
+
+/* ✅ Even Smaller Screens (Phones) */
+@media (max-width: 480px) {
+  .result-modal {
+    width: 95vw;
+    height: 70vh;
+    padding: 3vh;
+  }
+
+  .result-modal h2 {
+    font-size: 1rem;
+  }
+
+  .result-modal p {
+    font-size: 1rem;
+  }
+
+  .result-modal button {
+    font-size: 1.8rem;
+    padding: 0.5rem 1rem;
+  }
 }

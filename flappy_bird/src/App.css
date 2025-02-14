@@ -5,16 +5,37 @@
     background-repeat: no-repeat;
     background-blend-mode: multiply;
 }
-.Clouds{
-    width: 40vh;
-    height:20vh;
+.Clouds {
+    width: 20vw; /* Dynamic width based on screen size */
+    height: auto; /* Keeps the aspect ratio */
+    max-width: 400px; /* Ensures it doesn't shrink too much */
+    min-width: 200px; /* Ensures it's always visible */
+    min-height: 30vh;
     background-image: url("./assets/cloud2.webp");
     background-repeat: no-repeat;
+    background-size: contain; /* Ensures the full image is shown */
+    background-position: center;
     background-blend-mode: multiply;
-    animation: zoomEffect 10s infinite alternate ease-in-out;
+    animation: zoomEffect 5s infinite alternate ease-in-out;
 }
+
+
+/* For tablets */
+@media (max-width: 768px) {
+    .Clouds {
+        width: 30vw; /* Make them slightly bigger */
+    }
+}
+
+/* For mobile phones */
+@media (max-width: 480px) {
+    .Clouds {
+        width: 40vw; /* Make them bigger on smaller screens */
+    }
+}
+
 .Bird{
-    width:10vh;
+    width:5vw;
     height:10vh;
     background-image: url("./assets/bird.png");
     background-repeat: no-repeat;
@@ -28,10 +49,12 @@
 .GameBoard{
     background-color: rgb(108, 203, 247);
     background-image: url("./assets/day_light.jpg");
-    background-repeat: no-repeat;
-    background-size: contain; 
-    height:100vh;
-    width:80vw;
+    background-size: cover;   /* Ensures the image covers the entire screen */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents repeating */
+    width: 100vw;  /* Full viewport width */
+    height: 100vh; /* Full viewport height */
+    overflow: hidden; /* Prevents scrolling */
 
     display:flex;
     justify-items: center;
