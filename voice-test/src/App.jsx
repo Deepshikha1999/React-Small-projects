@@ -1,10 +1,12 @@
 import './App.css'
+import AudioFrequencyAnalyzer from './AudioFrequencyAnalyzer'
 import AudioRecorder from './AudioRecorder'
 
 function App() {
   return (
     <div className="flex justify-center items-center min-h-screen">
       <AudioRecorder />
+      <AudioFrequencyAnalyzer/>
     </div>
   )
 }
