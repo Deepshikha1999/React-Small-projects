@@ -1,0 +1,11 @@
+body {
+    background: linear-gradient(rgba(22, 10, 59, 0.7), rgba(14, 10, 27, 0.7)), url("./assets/batmobile.jpg");
+    backdrop-filter: blur(2px); 
+    background-size: cover;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+}
