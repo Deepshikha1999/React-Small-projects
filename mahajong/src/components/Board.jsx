@@ -107,7 +107,7 @@ export default function Board({ level, onHandleNextLevel, randomImg, setGameOver
                     (
                         <div className="dialog" style={{ color: "white" }}>
                             <h1>LEVEL COMPLETED</h1>
-                            <h1>{(timer/60).toFixed(2)} s / {Math.max((1000 -(timer*10)),100)} score</h1>
+                            <h1>{(timer/60).toFixed(2)} m / {Math.max((1000 -(timer*10)),100)} score</h1>
                             <button onClick={onHandleExit}>{level == TotalLevel?"OVER":"NEXT"}</button>
                         </div>
                     ) : (
