@@ -1,6 +1,6 @@
 const fs = require("fs");
 
-const folderPath = "/Users/deepshikhasahoo/Documents/react/mahajong/src/assets/PNG-cards-1.3"; // Change this to your directory path
+const folderPath = "/Users/deepshikhasahoo/Documents/react/shooter/src/assets/House"; // Change this to your directory path
 
 fs.readdir(folderPath, (err, files) => {
     if (err) {

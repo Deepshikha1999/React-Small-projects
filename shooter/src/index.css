@@ -1,0 +1,11 @@
+body {
+    background-image: url("./assets/digital-art-fire.jpg");
+    /* backdrop-filter: blur(2px);  */
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    height:100vh;
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+}

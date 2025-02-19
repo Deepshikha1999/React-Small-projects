@@ -1,0 +1,70 @@
+.App {
+    background: linear-gradient(rgba(0, 0, 0, 0.619), rgba(255, 0, 0, 0)), url("./assets/fantasy-style-scene-with-mountains-landscape.jpg");/*, url("./assets/fantasy-style-scene-with-mountains-landscape.jpg")*/
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    /* cursor: none; */
+}
+
+
+
+.GunPoint {
+    position: absolute;
+    height: 10vh;
+    width: 10vh;
+    background: radial-gradient(rgba(255, 255, 255, 0.74), rgba(0, 0, 0, 0.5)), url("./assets/black-red-target.png");
+    background-size: contain;
+    background-blend-mode: hue;
+    border: 0.1em rgba(0, 0, 0, 0.453) solid;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* Fixes centering */
+    transform: translate(-50%, -50%);
+    
+    /* Prevents interfering with mouse events */
+    pointer-events: none;
+}
+
+.Blood-shot,.Gun-shot {
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Blood-shot{
+    height: 25vh;
+    width: 20vw;
+    background-image: url("./assets/Blood1.png");
+}
+
+.Gun-shot{
+    height: 15vh;
+    width: 15vh;
+    background-image: url("./assets/gunShotSpark.png");
+}
+
+.Monster {
+    /* position: absolute; */
+    height: 30vh;
+    width: 30vh;
+    /* background-image: url("./assets/Samurai1.gif"); */
+    background-size: contain;
+    background-repeat: no-repeat;
+    /* display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%; */
+}
+
