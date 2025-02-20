@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react";
-import Player from "./player";
 import generateMaze from "../helper/MazeGenerator";
-import music from "../audio/inspiring-piano-music-293598.mp3"
 
 export default function Grid({X,Y,setLevels,setStartGame}) {
     // const VIEW_X = X;
