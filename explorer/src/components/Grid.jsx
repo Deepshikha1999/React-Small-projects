@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Player from "./Player";
 import generateMaze from "../helper/MazeGenerator";
 
 export default function Grid({X,Y,setLevels,setStartGame}) {
