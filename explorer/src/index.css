@@ -1,0 +1,13 @@
+body {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(59, 2, 247, 0.5)),url("./assets/2102.i518.009_sky_cloud_evening_illustration.jpg");
+  /* backdrop-filter: blur(2px); */
+  background-size: cover;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  /* Centers horizontally */
+  align-items: center;
+  /* Centers vertically */
+}

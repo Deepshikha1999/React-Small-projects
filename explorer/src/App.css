@@ -1,0 +1,72 @@
+.App {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Grid{
+  height: 100vh;
+  width: 90vw;
+  display: grid;
+}
+.Box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Player{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color:white;
+  height: 100%;
+  width: 100%;
+  animation: glow 1s infinite alternate;
+  background-color: white;
+}
+
+@keyframes glow {
+  0% { box-shadow: 0 0 50px white; }
+  50% { box-shadow: 0 0 80px white; }
+  100% { box-shadow: 0 0 50px white; }
+}
+
+.Wall{
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color:white;
+  height: 100%;
+  width: 100%;
+  backdrop-filter: blur(2px);
+  border: 2px black solid;
+  box-shadow: 0 0 1px black, 0 0 3px black, 0 0 5px black;
+}
+
+.Exit{
+  background-color: red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color:white;
+  height: 100%;
+  width: 100%;
+}
+
+button{
+  font-size: 5em;
+  font-family: 'Times New Roman', Times, serif;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.32);
+  color: white;
+  border-radius: 2%;
+  animation: glow 1s infinite alternate;
+  margin : 1em;
+}
+
+button:active{
+  background-color: rgba(0, 0, 0, 1);
+}
