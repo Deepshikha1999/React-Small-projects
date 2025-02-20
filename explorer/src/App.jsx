@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import './App.css'
 import Grid from './components/Grid'
 const LEVELS = { 1: 5, 2: 10, 3: 15, 4: 20, 5: 25, 6: 30, 7: 35, 8: 40, 9: 45, 10: 50 }
-const N = 5
+const N = 10
 function App() {
 
   const [level, setLevels] = useState(!localStorage.getItem("Level") ? 1 : parseInt(localStorage.getItem("Level")))
