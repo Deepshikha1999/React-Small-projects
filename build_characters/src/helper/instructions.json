@@ -1,0 +1,12 @@
+{
+    "Intro": "PIXEL CANVAS",
+    "InstructionsToDraw":{
+        "Draw": "Press d",
+        "UnDraw" : "Press u",
+        "Erase": "Press e",
+        "UnErase": "Press n",
+        "To select color" : "Click on the color pallet on the right hand side",
+        "To de-select color": "Click UnSelect",
+        "To clear canvas" : "Press Clear button"
+    }
+}
