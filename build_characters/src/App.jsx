@@ -2,18 +2,48 @@ import { useEffect, useState } from 'react'
 import './App.css'
 import colors from './helper/colors.json';
 import instructions from './helper/instructions.json'
-
+import generateName from "./helper/RandomFileNameGenerator"
 function App() {
   const [grid, setGrid] = useState(
     Array.from({ length: 101 }, () => Array.from({ length: 51 }, () => "0"))
   );
 
+  const [fileName, setFileName] = useState(generateName())
   const [selectedColor, setSelectedColor] = useState(8)
   const [selected, setIsSelected] = useState(true)
-  const [saveList, setSaveList] = useState([])
+  const [saveList, setSaveList] = useState({});
+  
   const [isDraw, setIsDraw] = useState(false)
   const [isErase, setIsErase] = useState(false)
   const [canvasBoard, setCanvasBoard] = useState(false)
+  const [selectedCanva, setSelectedCanva] = useState(null)
+
+  useEffect(()=>{
+    localStorage.setItem("Canvas",JSON.stringify(saveList))
+    setSelectedCanva(()=>{
+      if(Object.keys(saveList).length>0){
+        return Object.keys(saveList)[0]
+      }
+      else{
+        return fileName
+      }
+    })
+  },[saveList])
+
+  useEffect(() => {
+    setSaveList(() => {
+      let storedCanvas = localStorage.getItem("Canvas");
+      if (storedCanvas) {
+        storedCanvas = JSON.parse(storedCanvas)
+        setSelectedCanva(Object.keys(storedCanvas)[0]);
+      } else {
+        storedCanvas = {}
+        setSelectedCanva(fileName);
+      }
+      return storedCanvas;
+    })
+  }, []); 
+  
 
   function handleSelection(index) {
     if (!selected || selectedColor != index) {
@@ -86,26 +116,57 @@ function App() {
       {!canvasBoard && <div className='Main'>
         <div className="sections">
           <div className="headingintro">
-          <div className='heading'>PIXEL CANVA</div>
-          <div className="newCanva" onClick={()=>{
-            setCanvasBoard(true)
-          }}>NEW CANVA</div>
+            <div className='heading'>PIXEL CANVA</div>
+            <div className="newCanva" onClick={() => {
+              setCanvasBoard(true)
+              setFileName(generateName())
+              setGrid(Array.from({ length: 101 }, () => Array.from({ length: 51 }, () => "0")))
+            }}>NEW CANVA</div>
           </div>
-          {saveList.length>0 && <>
-            <div className='canva'>{saveList[0].map((row, i) => (
-            <div className='row' key={i}>
-              {row.map((box, j) => (
-                <div className="box" key={i + "_" + j} style={{
-                  backgroundColor: `${colors[box]}`
-                }}></div>
-              ))}
+          {Object.keys(saveList).length > 0 && <>
+            <div className='canva'>{saveList[selectedCanva].map((row, i) => (
+              <div className='row' key={i}>
+                {row.map((box, j) => (
+                  <div className="box" key={i + "_" + j} style={{
+                    backgroundColor: `${colors[box]}`
+                  }}></div>
+                ))}
+              </div>
+            ))}</div>
+            <div className='album'>
+              {Object.keys(saveList).map((canva, ind) => {
+                return <div className="photo" key={ind} onClick={() => {
+                  setSelectedCanva(canva)
+                }}>{
+                    saveList[canva].map((row, i) => (
+                      <div className='row' key={i}>
+                        {row.map((box, j) => (
+                          <div className="box" key={i + "_" + j} style={{
+                            backgroundColor: `${colors[box]}`
+                          }}></div>
+                        ))}
+                      </div>
+                    ))
+                  }</div>
+              })}
+              <div className="miniMenu">
+                <div className="m" onClick={() => {
+                  setSaveList((oldList) => {
+                    let newList = { ...oldList };
+                    delete newList[selectedCanva];
+                    setSelectedCanva(Object.keys(newList).length > 0 ? Object.keys(newList)[0] : fileName);
+                    return newList;
+                  });
+
+                }}>DELETE</div>
+                <div className="m" onClick={() => {
+                  setCanvasBoard(true)
+                  setGrid(saveList[selectedCanva])
+                  setFileName(selectedCanva)
+                }}>EDIT</div>
+              </div>
             </div>
-          ))}</div>
           </>}
-          {/* <div className="album">
-          <div className='next'>{">>"}</div>
-          <div className='prev'>{"<<"}</div>
-        </div> */}
         </div>
       </div>}
       {canvasBoard && <div className='App'>
@@ -114,7 +175,7 @@ function App() {
           <div className='steps'>
             {
               Object.keys(instructions.InstructionsToDraw).map((step, i) => {
-                return <div className='line'>
+                return <div className='line' key={i}>
                   {step} : {instructions.InstructionsToDraw[step]}
                 </div>
               })
@@ -153,12 +214,12 @@ function App() {
           </div>
 
           <div className='menuList' onClick={() => {
-            setSaveList(oldList => [...oldList, grid])
+            setSaveList(oldList => ({ ...oldList, [fileName]: grid }))
           }}>
             SAVE
           </div>
 
-          <div className='menuList' onClick={()=>{
+          <div className='menuList' onClick={() => {
             setCanvasBoard(false)
           }}>
             SAVED CANVAS

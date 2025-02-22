@@ -1,12 +1,12 @@
 {
     "Intro": "PIXEL CANVAS",
     "InstructionsToDraw":{
-        "Draw": "Press d",
-        "UnDraw" : "Press u",
-        "Erase": "Press e",
-        "UnErase": "Press n",
+        "Draw": "Press d or double Click",
+        "UnDraw" : "Press u or double Click",
+        "Erase": "Press e or left click",
+        "UnErase": "Press n or left click",
         "To select color" : "Click on the color pallet on the right hand side",
-        "To de-select color": "Click UnSelect",
+        "To set default color": "Click Default color",
         "To clear canvas" : "Press Clear button"
     }
 }
