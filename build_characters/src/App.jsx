@@ -100,7 +100,7 @@ function App() {
   }
 
   function eraseOrg(event) {
-    // event.preventDefault()
+    event.preventDefault()
     setIsErase(oldVal => !oldVal)
     setIsDraw(false)
   }
