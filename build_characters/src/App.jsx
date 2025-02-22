@@ -116,7 +116,7 @@ function App() {
       {!canvasBoard && <div className='Main'>
         <div className="sections">
           <div className="headingintro">
-            <div className='heading'>PIXEL CANVA</div>
+            <div className='heading'>DOODLE CANVA</div>
             <div className="newCanva" onClick={() => {
               setCanvasBoard(true)
               setFileName(generateName())
