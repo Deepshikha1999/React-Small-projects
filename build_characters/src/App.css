@@ -57,8 +57,12 @@
   overflow-x:hidden;
   scroll-behavior: smooth;
   scrollbar-width: none;
+  place-items: center;
 }
 
+.photo:active,.photo:hover{
+  border: 2px black solid;
+}
 
 .heading{
   display: flex;
