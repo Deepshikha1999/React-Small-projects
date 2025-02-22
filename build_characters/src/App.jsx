@@ -95,7 +95,12 @@ function App() {
   }
 
   function setDrawOrg(event) {
-    setIsDraw(oldVal => !oldVal)
+    setIsDraw(true)
+    setIsErase(false)
+  }
+
+  function unsetDrawOrg(event) {
+    setIsDraw(false)
     setIsErase(false)
   }
 
@@ -106,11 +111,13 @@ function App() {
   }
   useEffect(() => {
     window.addEventListener("keydown", setDraw)
-    window.addEventListener("dblclick", setDrawOrg)
+    window.addEventListener("mousedown", setDrawOrg)
+    window.addEventListener("mouseup", unsetDrawOrg)
     window.addEventListener("contextmenu", eraseOrg)
     return () => {
       window.removeEventListener("keydown", setDraw)
-      window.removeEventListener("dblclick", setDrawOrg)
+      window.removeEventListener("mousedown", setDrawOrg)
+      window.removeEventListener("mouseup", unsetDrawOrg)
       window.removeEventListener("contextmenu", eraseOrg)
     }
   }, [])
