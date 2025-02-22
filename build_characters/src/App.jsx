@@ -8,27 +8,31 @@ function App() {
     Array.from({ length: 101 }, () => Array.from({ length: 51 }, () => "0"))
   );
 
+  const [count, setCount] = useState(0)
   const [fileName, setFileName] = useState(generateName())
   const [selectedColor, setSelectedColor] = useState(8)
   const [selected, setIsSelected] = useState(true)
   const [saveList, setSaveList] = useState({});
-  
+
   const [isDraw, setIsDraw] = useState(false)
   const [isErase, setIsErase] = useState(false)
   const [canvasBoard, setCanvasBoard] = useState(false)
   const [selectedCanva, setSelectedCanva] = useState(null)
 
-  useEffect(()=>{
-    localStorage.setItem("Canvas",JSON.stringify(saveList))
-    setSelectedCanva(()=>{
-      if(Object.keys(saveList).length>0){
-        return Object.keys(saveList)[0]
-      }
-      else{
-        return fileName
-      }
-    })
-  },[saveList])
+  useEffect(() => {
+    if (count > 0) {
+      localStorage.setItem("Canvas", JSON.stringify(saveList))
+      setSelectedCanva(() => {
+        if (Object.keys(saveList).length > 0) {
+          return Object.keys(saveList)[0]
+        }
+        else {
+          return fileName
+        }
+      })
+    }
+    setCount(oldCount=>oldCount+1)
+  }, [saveList])
 
   useEffect(() => {
     setSaveList(() => {
@@ -42,8 +46,8 @@ function App() {
       }
       return storedCanvas;
     })
-  }, []); 
-  
+  }, []);
+
 
   function handleSelection(index) {
     if (!selected || selectedColor != index) {
@@ -96,7 +100,7 @@ function App() {
   }
 
   function eraseOrg(event) {
-    event.preventDefault()
+    // event.preventDefault()
     setIsErase(oldVal => !oldVal)
     setIsDraw(false)
   }
@@ -195,6 +199,18 @@ function App() {
             setIsSelected(true)
             setIsDraw(false)
           }}>DEFAULT COLOR</div>
+
+          <div className='menuList' onClick={() => {
+            setGrid((oldGrid) => {
+              let newGrid = [...oldGrid]
+              for (let i = 0; i < oldGrid.length; i++) {
+                for (let j = 0; j < oldGrid[0].length; j++) {
+                  newGrid[i][j] = selectedColor
+                }
+              }
+              return newGrid;
+            })
+          }}>FILL BACKGROUND</div>
 
           <div className="menuList" style={{
             display: "grid",

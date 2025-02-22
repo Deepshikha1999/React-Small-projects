@@ -47,7 +47,7 @@
 .album{
   display:grid;
   grid-template-rows: repeat(10,1fr);
-  width: 6vw;
+  width: 10vw;
   height: 75vh;
   gap:2em;
   background-color: bisque;
@@ -173,7 +173,7 @@
   height: 80vh;
   width: 10vw;
   display:grid;
-  grid-template-rows: repeat(5,1fr);
+  grid-template-rows: repeat(6,1fr);
   gap:5px;
   margin: 1em;
 }
