@@ -1,0 +1,43 @@
+.App {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.playground{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.player{
+    width: 5vh;
+    height: 5vh;
+    /* border: 5px bisque solid; */
+    border-radius: 50%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+}
+
+.player .ball{
+    width: 2vh;
+    height: 2vh;
+    border-radius: 50%;
+    background-color: crimson;
+    /* background-image: url("./assets/feather.webp");
+    background-repeat: no-repeat;
+    background-size: contain; */
+}
+
+.rigidBody{
+    width: 110vw;
+    height: 0.1em;
+    /* border: 5px bisque solid; */
+    /* border-radius: 50%; */
+    background-color: rgb(92, 27, 27);
+}
