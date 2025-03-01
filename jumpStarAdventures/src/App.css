@@ -1,0 +1,18 @@
+.Room {
+  height: 100vh;
+  width: 100vw;
+  background: repeating-linear-gradient(rgba(220, 20, 60, 0.368),rgba(0, 0, 255, 0.427)),url("./assets/wall.jpeg");
+  background-size: contain;
+}
+
+.Player {
+  height: 5vh;
+  width: 2vw;
+  background-color: black;
+}
+
+.Block {
+  height: 20vh;
+  width: 5vw;
+  background-color: blueviolet;
+}

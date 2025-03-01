@@ -1,0 +1,10 @@
+body{
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: repeating-linear-gradient(rgba(220, 20, 60, 0.368),rgba(0, 0, 255, 0.427));
+  background-size: cover;
+  margin: 0;
+}
