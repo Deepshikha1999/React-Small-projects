@@ -1,0 +1,19 @@
+body {
+  background: linear-gradient(black, rgba(61, 2, 137, 0.1)),url("./assets/dark-planet-space-landscape.jpg");
+  /* backdrop-filter: blur(2px); */
+  background-size: cover; 
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  font-family:'digital-clock-font';
+  color: white;
+}
+
+@font-face{
+  font-family:'digital-clock-font';
+  src: url('./assets/technology.bold.ttf');
+ }
