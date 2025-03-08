@@ -2,7 +2,8 @@ import { useEffect, useRef, useState } from "react";
 import Player from "./Player";
 import Enemy from "./Enemy";
 
-export default function GameGrid({ setHighestScore, setGameStart}) {
+export default function GameGrid({ setHighestScore, setGameStart }) {
+    const [start, setStart] = useState(false)
     const [playerPos, setPlayerPos] = useState({ x: 0, y: 0 })
     const keyPressed = useRef(new Set())
     const [speed, setSpeed] = useState(10)
@@ -35,34 +36,34 @@ export default function GameGrid({ setHighestScore, setGameStart}) {
         const gameGrid = document.querySelector("#GameGrid").getBoundingClientRect()
         const player = document.querySelector("#Player").getBoundingClientRect()
         if (time % timeToCreateNewAlien.current == 0) {
-            if (gameLife > 0) {
+            if (gameLife > 0 && start) {
                 setAliens((currAliens) => {
                     let arr = []
                     let newAliens = currAliens.length ? [...currAliens] : []
                     // for (let i = 0; i < 1; i++) {
-                        let x = Math.floor(Math.random() * (gameGrid.width + gameGrid.left - gameGrid.left) + gameGrid.left)
-                        while (arr.includes(x) || arr.includes(x + player.width) || (x + player.width > gameGrid.width + gameGrid.left)) {
-                            x = Math.floor(Math.random() * (gameGrid.width + gameGrid.left - gameGrid.left) + gameGrid.left)
-                        }
-                        arr.push(x)
-                        if (score % 100 == 0 && score > 0) {
-                            newAliens.push({
-                                x: x,
-                                y: 0,
-                                life: 100,
-                                scale: 2,
-                                score: 20
-                            })
-                        }
-                        else {
-                            newAliens.push({
-                                x: x,
-                                y: 0,
-                                life: 20,
-                                scale: 1,
-                                score:1
-                            })
-                        }
+                    let x = Math.floor(Math.random() * (gameGrid.width + gameGrid.left - gameGrid.left) + gameGrid.left)
+                    while (arr.includes(x) || arr.includes(x + player.width) || (x + player.width > gameGrid.width + gameGrid.left)) {
+                        x = Math.floor(Math.random() * (gameGrid.width + gameGrid.left - gameGrid.left) + gameGrid.left)
+                    }
+                    arr.push(x)
+                    if (score % 100 == 0 && score > 0) {
+                        newAliens.push({
+                            x: x,
+                            y: 0,
+                            life: 10,
+                            scale: 2,
+                            score: 20
+                        })
+                    }
+                    else {
+                        newAliens.push({
+                            x: x,
+                            y: 0,
+                            life: 5,
+                            scale: 1,
+                            score: 1
+                        })
+                    }
                     // }
                     return [...newAliens]
                 })
@@ -173,7 +174,7 @@ export default function GameGrid({ setHighestScore, setGameStart}) {
                                 //     // return alien;
                                 // }
                                 if (isHit) {
-                                    
+
                                     alien.life -= 1
                                 }
                                 return alien;
@@ -190,7 +191,10 @@ export default function GameGrid({ setHighestScore, setGameStart}) {
     }, []);
 
     function handleOnKeyDown(event) {
-        keyPressed.current.add(event.key)
+        if (start)
+            keyPressed.current.add(event.key)
+        else
+            setStart(true)
     }
     function handleOnKeyUp(event) {
         keyPressed.current.delete(event.key)
@@ -214,16 +218,17 @@ export default function GameGrid({ setHighestScore, setGameStart}) {
                 })}
             </div>
             <div className="Score">Score : {score}</div>
-            <button className="Exit" onClick={()=>{
+            <button className="Exit" onClick={() => {
                 setGameStart(false)
-            }}>EXIT</button> 
+            }}>EXIT</button>
             <Player playerPos={playerPos} />
             {
-                aliens.map((alien, i) => {
+                start && gameLife > 0 && aliens.map((alien, i) => {
                     return <Enemy alienPos={alien} key={i} />
                 })
             }
-            {gameLife>0 && shoot.map((shot, i) => {
+            {!start && <h1 style={{fontSize:"5em"}}>PRESS ANY KEY TO START</h1>}
+            {shoot.map((shot, i) => {
                 return <div className="Bullet" key={i} style={{
                     position: "absolute",
                     top: `${shot.y}px`,
@@ -231,12 +236,12 @@ export default function GameGrid({ setHighestScore, setGameStart}) {
                 }}></div>
             })}
             {
-                gameLife<=0 && <div className="GameOver">
+                start && gameLife <= 0 && <div className="GameOver">
                     <h1>YOUR SCORE: {score}</h1>
                     <button onClick={
-                        ()=>{
+                        () => {
                             setGameStart(false)
-                            setHighestScore(old_score=>Math.max(old_score,score))
+                            setHighestScore(old_score => Math.max(old_score, score))
                         }
                     }> REPLAY </button>
                 </div>
