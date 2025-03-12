@@ -1,0 +1,2 @@
+"dev": "concurrently \"vite\" \"electron electron.cjs\"",
+"dev": "vite",

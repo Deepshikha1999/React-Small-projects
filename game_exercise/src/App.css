@@ -1,0 +1,216 @@
+.App {
+  height: 100vh;
+  width: 75vw;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  gap: 1em;
+  place-items: center;
+  margin: 0;
+  background: linear-gradient(to top, crimson, purple);
+}
+
+.Header,
+.Footer {
+  width: 50vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  background: linear-gradient(45deg, orange, transparent), linear-gradient(90deg, crimson, transparent), linear-gradient(135deg, yellow, transparent), linear-gradient(270deg, crimson, transparent);
+}
+
+.Back,
+.Home {
+  margin: 1em;
+  width: 40vw;
+  border-radius: 10px;
+  background: linear-gradient(to top, crimson, purple);
+  padding: 1em;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.Back:hover,
+.Home:hover,
+.Back:active,
+.Home:active {
+  background: linear-gradient(to bottom, crimson, purple);
+  transform: scale(0.9);
+}
+
+.Menu {
+  height: 50vh;
+  width: 30vw;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 1em;
+  place-items: center;
+}
+
+.Expressions {
+  background: linear-gradient(to top, crimson, rgb(128, 0, 62));
+  width: 8vw;
+  height: 10vh;
+  color: gold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: medium;
+  border-radius: 73% 27% 67% 33% / 29% 58% 42% 71%;
+  box-shadow: 2px 2px 3px black;
+}
+
+.Expressions:hover,
+.Expressions:active {
+  background: linear-gradient(to top, crimson, gold);
+  color: white;
+  box-shadow: 2px 2px 3px gold;
+  transform: scale(0.9);
+}
+
+@keyframes bounceRotate {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  25% {
+    transform: translateY(-50px) rotate(20deg);
+  }
+
+  50% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  75% {
+    transform: translateY(-50px) rotate(-20deg);
+  }
+
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+.RadioBox {
+  height: 40vh;
+  width: 40vw;
+  background: linear-gradient(brown, black);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  place-items: center;
+  gap: 2em;
+  padding: 2em;
+}
+
+.Speakers {
+  width: 10vw;
+  height: 30vh;
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  gap: 2em;
+  place-items: center;
+  margin: 0.5em;
+  padding: 0.5em;
+  background: 
+  linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, transparent 60%),
+  linear-gradient(-90deg, rgba(0, 0, 0, 1) 0%, transparent 60%),
+  linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, transparent 60%),
+  linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, transparent 60%),
+  linear-gradient(teal, steelblue);
+}
+
+.LeftSpeaker,
+.RightSpeaker {
+  background: radial-gradient(circle,transparent 60%, black 50%), linear-gradient(rgb(22, 28, 51), gray), url("./assets/speaker-grill_043.png");
+  background-blend-mode: multiply;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 12vh;
+  width: 6.5vw;
+  border-radius: 50%;
+  /* margin: 1em; */
+}
+
+.AudioVideo {
+  width: 18vw;
+  height: 29vh;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  gap: 0.5em;
+  place-items: center;
+  margin: 1em;
+  padding: 1em;
+  background: 
+  linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, transparent 60%),
+  linear-gradient(-90deg, rgba(0, 0, 0, 1) 0%, transparent 60%),
+  linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, transparent 60%),
+  linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, transparent 60%),
+  linear-gradient(teal, steelblue);
+}
+
+.VideoBox{
+  width: 16vw;
+  /* background-color: teal; */
+  display: center;
+  justify-content: center;
+  align-items: center;
+}
+iframe{
+  /* display: center;
+  justify-content: center;
+  align-items: center;
+  border: 0;
+  height: 9vh;
+  background-color: none;
+  width: 16vw;
+  overflow: hidden; */
+  display: none;
+}
+
+.Controllers{
+  width: 16vw;
+  height: 4vh;
+  background-color: steelblue;
+  display: grid;
+  grid-template-columns: repeat(5,1fr);
+  gap: 0.1em;
+}
+
+.Icon{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.Icon:hover, .Icon:active{
+  background-color: teal;
+  color: rgba(245, 245, 245, 0.462);
+}
+
+.Casette{
+  padding: 1em;
+  background-color: cadetblue;
+}
+.boxCase{
+  background-color: black;
+  padding: 1em;
+  display: grid;
+  place-items: center;
+  grid-template-columns: repeat(3,1fr);
+}
+.casetteRollLeft,.casetteRollRight{
+  height: 6.5vh;
+  width: 3.5vw;
+  border-radius: 50%;
+  background: linear-gradient(beige 100%,transparent 0), url("./assets/circleRing.webp");
+  background-blend-mode: multiply;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.centerBox{
+  height: 2vh;
+  width: 5vh;
+  background-color: beige;
+}

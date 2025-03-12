@@ -1,0 +1,26 @@
+body {
+  background: linear-gradient(45deg ,orange, transparent), linear-gradient(90deg, crimson, transparent),linear-gradient(135deg,yellow, transparent), linear-gradient(270deg, crimson, transparent);
+  backdrop-filter: blur(2px);
+  background-size: cover;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  font-family: "Nova";
+}
+
+h1{
+  font-size: 3em;
+  background: linear-gradient(to top,crimson,purple);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+}
+
+@font-face {
+  font-family: 'Nova';
+  src: url('./assets/Propagate — Vintage Serif/Files/TTF/Propagate.ttf');
+}
