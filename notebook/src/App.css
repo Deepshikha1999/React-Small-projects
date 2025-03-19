@@ -1,0 +1,51 @@
+.App{
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* .DrawingPage{
+  height: 90vh;
+  width: 100vw;
+  display: grid;
+  grid-template-rows: repeat(4,1fr);
+  place-items: center;
+  cursor:pointer
+}
+.ColorBar{
+  display: grid;
+  place-items: center;
+  grid-auto-flow: column;
+  border:1px black solid;
+  gap: 0.1em;
+}
+
+.color:hover{
+  transform: scale(1.1);
+  border: 2px black solid;
+}
+
+.BlankPage{
+  border: 2px black solid;
+  height: 75vh;
+  width: 80vw;
+  background-color: aliceblue;
+}
+
+.MenuBar{
+  height: 4vh;
+  border: 2px black solid;
+  padding: 2px;
+  background-color: beige;
+}
+
+.menuLs{
+  padding: 0.5px;
+  border: 2px black solid;
+}
+
+.menuLs:hover, .menuLs:active{
+  background-color: crimson;
+} */

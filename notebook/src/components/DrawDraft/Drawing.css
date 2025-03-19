@@ -1,0 +1,41 @@
+.DrawingPage{
+    height: 100vh;
+    width: 80vw;
+    display: grid;
+    grid-template-rows: repeat(2,1fr);
+    place-items: center;
+}
+.Menu{
+    background-color: rgba(255,246,218,1);
+    width: 100%;
+    padding: 2px;
+}
+
+li{
+    background-color: rgba(128, 128, 128, 0.5);
+    text-align: center;
+    font-size: 1.5em;
+    padding: 2px;
+    margin: 2px;
+}
+
+li:hover, li:active{
+    background-color: crimson;
+    color: whitesmoke;
+}
+
+li::selection, li::-moz-selection {
+    background-color: green;
+    color: whitesmoke;
+}
+
+.BlankPage{
+    height: 90vh;
+    width: 80vw;
+}
+
+.svg-sheet{
+    background-color: white;
+    height: 90%;
+    width:100%;
+}

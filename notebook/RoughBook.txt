@@ -1,0 +1,49 @@
+SVG Path - <path>
+The <path> element is used to define a path.
+
+Paths are used to create simple or complex shapes combining several straight or curved lines.
+
+The <path> element has one basic attribute that defines the points and other commands of how to draw the path:
+
+
+Attribute	Description
+d	Required. A set of commands which define the path.
+The following commands are available for path data:
+
+M = moveto (move from one point to another point)
+L = lineto (create a line)
+H = horizontal lineto (create a horizontal line)
+V = vertical lineto (create a vertical line)
+C = curveto (create a curve)
+S = smooth curveto (create a smooth curve)
+Q = quadratic Bézier curve (create a quadratic Bézier curve)
+T = smooth quadratic Bézier curveto (create a smooth quadratic Bézier curve)
+A = elliptical Arc (create a elliptical arc)
+Z = closepath (close the path)
+Note: All of the commands above can also be expressed in lower case. Upper case means absolutely positioned, lower case means relatively positioned.
+
+
+Example
+<svg height="400" width="450" xmlns="http://www.w3.org/2000/svg">
+
+<!-- Draw the paths -->
+<path id="lineAB" d="M 100 350 l 150 -300" stroke="red" stroke-width="4"/>
+<path id="lineBC" d="M 250 50 l 150 300" stroke="red" stroke-width="4"/>
+<path id="lineMID" d="M 175 200 l 150 0" stroke="green" stroke-width="4"/>
+<path id="lineAC" d="M 100 350 q 150 -300 300 0" stroke="blue" stroke-width="4" fill="none"/>
+
+<!-- Mark relevant points -->
+<g stroke="black" stroke-width="3" fill="black">
+<circle id="pointA" cx="100" cy="350" r="4" />
+<circle id="pointB" cx="250" cy="50" r="4" />
+<circle id="pointC" cx="400" cy="350" r="4" />
+</g>
+
+<!-- Label the points -->
+<g font-size="30" font-family="sans-serif" fill="green" text-anchor="middle">
+<text x="100" y="350" dx="-30">A</text>
+<text x="250" y="50" dy="-10">B</text>
+<text x="400" y="350" dx="30">C</text>
+</g>
+
+</svg>

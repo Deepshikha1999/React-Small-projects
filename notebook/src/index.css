@@ -1,0 +1,11 @@
+body {
+  background: linear-gradient(rgba(169,74,74,1),rgba(255,246,218,1)); /*,rgba(244,215,147,1)*/
+  background-size: cover; 
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}

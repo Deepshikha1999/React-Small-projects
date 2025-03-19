@@ -1,0 +1,59 @@
+{
+    "default": {
+        "compName": "polyline",
+        "properties": {
+            "points": "",
+            "strokeWidth": "none",
+            "strokeColor": "none",
+            "fill": "none"
+        }
+    },
+    "line":{
+        "compName": "line",
+        "properties": {
+            "points": "",
+            "strokeWidth": "none",
+            "strokeColor": "none",
+            "fill": "none"
+        }
+    },
+    "rectangle":{
+        "compName": "rectangle",
+        "properties": {
+            "points": "",
+            "width":100,
+            "height":50,
+            "strokeWidth": "none",
+            "strokeColor": "none",
+            "fill": "none"
+        }
+    },
+    "circle":{
+        "compName": "circle",
+        "properties": {
+            "points": "",
+            "radius":50,
+            "strokeWidth": "none",
+            "strokeColor": "none",
+            "fill": "none"
+        }
+    },
+    "polygon":{
+        "compName": "polygon",
+        "properties": {
+            "points": "",
+            "strokeWidth": "none",
+            "strokeColor": "none",
+            "fill": "none"
+        }
+    },
+    "curve":{
+        "compName": "curve",
+        "properties": {
+            "points": "",
+            "strokeWidth": "none",
+            "strokeColor": "none",
+            "fill": "none"
+        }
+    }
+}
