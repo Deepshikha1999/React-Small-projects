@@ -1,0 +1,34 @@
+.App{
+    display: grid;
+    grid-template-rows: repeat(2,1fr);
+    place-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.Header{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    place-items: center;
+    width: 100vw;
+    height: 10vh;
+    /* background-color: rgba(0, 0, 0, 0.233); */
+}
+
+.Main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 90vh;
+    /* background-color: rgba(117, 7, 214, 0.233); */
+}
+
+.gameBoard{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 90vh;
+    /* background-color: black; */
+}

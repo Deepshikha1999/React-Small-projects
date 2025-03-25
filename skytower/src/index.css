@@ -1,0 +1,10 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(purple, crimson);
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
