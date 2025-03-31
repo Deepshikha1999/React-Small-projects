@@ -1,0 +1,12 @@
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.379),transparent),url("./assets/anime-style-portrait-traditional-japanese-samurai-character.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow:hidden;
+}
