@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react"
 import "./../styles/Sheet.css";
-import imgSrc from "./../assets/IMG_1931.PNG";
+import imgSrc from "./../assets/IMG_1931.png";
 
 export default function Sheet10({ }) {
     const canvasRef = useRef(null)

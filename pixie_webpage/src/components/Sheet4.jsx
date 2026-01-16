@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react"
 import "./../styles/Sheet4.css"
-import imgSrc from "./../assets/IMG_1928.PNG";
+import imgSrc from "./../assets/IMG_1928.png";
 
 export default function Sheet4({ }) {
     const canvasRef = useRef(null)

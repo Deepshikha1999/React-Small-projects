@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import "./../styles/Sheet.css";
-import image1 from "./../assets/IMG_1931.PNG";
+import image1 from "./../assets/IMG_1931.png";
 
 export default function ClipImage() {
   const canvasRef = useRef(null);
