@@ -1,0 +1,72 @@
+.App {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+
+/* Floating container */
+.nav-container {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  display: flex;
+  gap: 20px;
+  align-items: center;
+
+  padding: 12px 20px;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 30px;
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+}
+
+/* Buttons */
+.nav {
+  color: white;
+  cursor: pointer;
+  padding: 8px 14px;
+  user-select: none;
+}
+
+.nav:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+}
+
+.Header {
+  position: fixed;
+  top: 5vh;
+  left: 10%;
+  transform: translateX(-50%);
+
+  display: flex;
+  gap: 20px;
+  align-items: center;
+
+  padding: 12px 20px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 30px;
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  font-family: "Luckiest Guy", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.5em;
+  background: linear-gradient(
+    45deg,
+    #ff2f92,
+    #7a00ff,
+    #00ffd1,
+    #baff00
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
