@@ -197,6 +197,7 @@ export default function Sand({}) {
 
         }}>
             <canvas ref={canvasRef}></canvas>
+            <div className = "message">Move to see colorful sand !</div>
         </div>
     );
 }

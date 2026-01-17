@@ -92,6 +92,7 @@ export default function Sheet3({ }) {
 
         }}>
             <canvas ref={canvasRef}></canvas>
+            <div className = "message">Click to change color !</div>
         </div>
     )
 }

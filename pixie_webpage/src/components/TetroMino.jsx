@@ -323,6 +323,7 @@ export default function TetroMino({ }) {
 
         }}>
             <canvas ref={canvasRef}></canvas>
+            <div className = "message">Play fussy tetromino, use left right up and down nav keys!</div>
         </div>
     );
 }

@@ -132,6 +132,7 @@ export default function CloudOnClick({}) {
 
         }}>
             <canvas ref={canvasRef}></canvas>
+            <div className = "message">Click to see clouds !</div>
         </div>
     );
 }

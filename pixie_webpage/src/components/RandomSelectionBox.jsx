@@ -223,6 +223,7 @@ export default function RandomSelectionBox({}) {
 
         }}>
             <canvas ref={canvasRef}></canvas>
+            <div className = "message">Use up and down and left and right arrow keys !</div>
         </div>
     );
 }

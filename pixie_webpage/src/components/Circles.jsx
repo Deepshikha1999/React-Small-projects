@@ -156,6 +156,7 @@ export default function Circles({ }) {
 
         }}>
             <canvas ref={canvasRef}></canvas>
+            <div className = "message">Hover on circles to see changes !</div>
         </div>
     );
 }

@@ -132,6 +132,7 @@ export default function ClickSpark({ }) {
 
         }}>
             <canvas ref={canvasRef}></canvas>
+            <div className = "message">Spark on Click !</div>
         </div>
     );
 }

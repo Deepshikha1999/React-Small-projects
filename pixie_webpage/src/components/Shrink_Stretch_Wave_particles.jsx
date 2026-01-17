@@ -194,6 +194,7 @@ export default function Shrink_Stretch_Wave_particles({}) {
 
         }}>
             <canvas ref={canvasRef}></canvas>
+            <div className = "message">Move to see changes !</div>
         </div>
     );
 }

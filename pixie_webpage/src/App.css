@@ -70,3 +70,28 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+.message {
+  position: fixed;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  display: flex;
+  gap: 20px;
+  align-items: center;
+
+  padding: 12px 20px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 30px;
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  font-family: "Luckiest Guy", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.5em;
+  background: linear-gradient(45deg,
+  #43464C,#9197A6,#7690CF,#48577D);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

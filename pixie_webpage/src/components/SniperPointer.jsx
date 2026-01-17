@@ -175,6 +175,7 @@ export default function SniperPointer({}) {
 
         }}>
             <canvas ref={canvasRef}></canvas>
+            <div className = "message">Move to point target !</div>
         </div>
     );
 }

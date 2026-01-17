@@ -1,4 +1,4 @@
-.Sheet1{
+.Sheet1 {
     width: 100vw;
     height: 100vh;
     margin: 0;
@@ -12,5 +12,4 @@
     font-family: "Jacquard 24", system-ui;
     font-weight: 400;
     font-style: normal;
-  }
-  
+}

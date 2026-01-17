@@ -141,6 +141,7 @@ export default function Spiral({}) {
 
         }}>
             <canvas ref={canvasRef}></canvas>
+            <div className = "message">Have patience !</div>
         </div>
     );
 }

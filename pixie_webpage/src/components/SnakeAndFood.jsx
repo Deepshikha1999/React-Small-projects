@@ -254,6 +254,7 @@ export default function SnakeAndFood({}) {
 
         }}>
             <canvas ref={canvasRef}></canvas>
+            <div className = "message">Use left & right, up & down arrow keys and feed the white box the color food !</div>
         </div>
     );
 }

@@ -193,6 +193,7 @@ export default function MultipleBouncingBall({}) {
 
         }}>
             <canvas ref={canvasRef}></canvas>
+            <div className = "message">Click to create balls !</div>
         </div>
     );
 }

@@ -160,6 +160,7 @@ export default function BubbleEffect({ }) {
 
         }}>
             <canvas ref={canvasRef}></canvas>
+            <div className = "message">Click to see changes !</div>
         </div>
     );
 }

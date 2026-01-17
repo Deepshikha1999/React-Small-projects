@@ -102,7 +102,7 @@ export default function BoxMotion({  }) {
 
         console.log(change, t)
         pos.current = {
-            x: Math.min(width/2 - movingObject.current.x, Math.max(0, pos.current.x + change.x * t)),
+            x: Math.min(width - movingObject.current.x, Math.max(0, pos.current.x + change.x)),
             y: Math.min((height / 2) - movingObject.current.y, pos.current.y + change.y * t + 0.5 * g * t * t)
         }
 
@@ -193,6 +193,7 @@ export default function BoxMotion({  }) {
 
         }}>
             <canvas ref={canvasRef}></canvas>
+            <div className = "message">Use left and right arrow to move & {"<Space>"} to jump !</div>
         </div>
     );
 }

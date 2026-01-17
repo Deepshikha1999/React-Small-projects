@@ -141,6 +141,7 @@ export default function Sheet10({ }) {
 
         }}>
             <canvas ref={canvasRef}></canvas>
+            <div className = "message">Click to see changes !</div>
         </div>
     )
 }

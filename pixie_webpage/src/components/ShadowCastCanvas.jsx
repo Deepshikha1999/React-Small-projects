@@ -143,6 +143,7 @@ export default function ShadowCastCanvas({ }) {
 
         }}>
             <canvas ref={canvasRef}></canvas>
+            <div className = "message">Move to see shadow !</div>
         </div>
     );
 }

@@ -163,6 +163,7 @@ export default function PixelTrail({}) {
 
         }}>
             <canvas ref={canvasRef}></canvas>
+            <div className = "message">Move to see the trail !</div>
         </div>
     );
 }
