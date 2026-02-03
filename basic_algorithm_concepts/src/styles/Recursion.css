@@ -1,0 +1,15 @@
+.Recursion {
+    padding: 2rem;
+    color: white;
+    background:
+        linear-gradient(0deg,
+        black);
+
+    width: 100%;
+    height: 100%;
+    /* font-family: "Jersey 15", sans-serif; */
+}
+
+#recursion_board {
+    height: 80%;
+}

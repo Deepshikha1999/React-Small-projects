@@ -1,0 +1,109 @@
+/* Container for the Title and Message */
+.Matrix {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5em;
+    background-color: #121212;
+    min-height: 100vh;
+}
+
+/* Wrapper for Board and Panel */
+.GameContainer {
+    display: flex;
+    flex-direction: row; /* Aligns items horizontally */
+    align-items: flex-start; /* Keeps them aligned to the top */
+    gap: 3em; /* Space between board and buttons */
+    margin-top: 1.5em;
+    width: 100%;
+    height: 80%;
+    justify-content: center;
+}
+
+#matrix_board {
+    height: 70vh; /* Suggest a fixed height or min-height for the canvas area */
+    width: 30vw;  /* Suggest a fixed width so it doesn't squash */
+    background: #000;
+    border: 2px solid #333;
+}
+
+.controlPanel {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Ensures the inner group is centered */
+    background: #1a1a1a;
+    padding: 3em;
+    border-radius: 1.5em;
+    box-shadow: 0 0.5em 1.2em rgba(0, 0, 0, 0.5);
+    /* Set a height or let it wrap content; align-items: center takes care of the rest */
+}
+
+.ControlsGroup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5em;
+}
+
+/* Start Button styling */
+.spaceBar {
+    width: 100%;
+    padding: 1em 2em;
+    background: #27ae60;
+    color: white;
+    border: none;
+    border-radius: 0.8em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.1s, background 0.2s;
+}
+
+.spaceBar:active {
+    transform: scale(0.95);
+    background: #2ecc71;
+}
+
+/* D-Pad Layout */
+.DPad {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+}
+
+.HorizontalArrows {
+    display: flex;
+    gap: 1em;
+}
+
+/* Arrow Button Styling */
+.upArrow, .leftArrow, .rightArrow {
+    width: 7vw;
+    height: 5vh;
+    background: #333;
+    color: #fff;
+    border: 0.2em solid #444;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.upArrow:active, .leftArrow:active, .rightArrow:active {
+    background: #555;
+    border-color: #00d4ff; /* Glowing effect on press */
+}
+
+/* Make Up Arrow stand out as the 'Action' key */
+.upArrow {
+    background: #2980b9;
+}
+
+@media (max-width: 768px) {
+    .GameContainer {
+        flex-direction: column;
+        align-items: center;
+    }
+}

@@ -1,0 +1,63 @@
+.NaiveStringMatching {
+    padding: 2rem;
+    color: black;
+    background: linear-gradient(120deg,
+            #76644F,
+            /* #E5D7B4, */
+            #FCB332);
+}
+
+/* Glass card */
+.glass-card {
+    width: 100%;
+    max-width: 800px;
+    padding: 2rem;
+
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Title */
+.card-title {
+    margin: 0 0 1rem;
+    font-size: 1.8rem;
+    color: #f2e95e;
+    /* bright title */
+}
+
+/* Description text */
+.card-text {
+    max-height: 250px;
+    /* control visible height */
+    overflow-y: auto;
+    /* vertical scroll */
+    padding-right: 8px;
+    /* space for scrollbar */
+
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #eaeaea;
+}
+
+.card-text::-webkit-scrollbar {
+    width: 6px;
+}
+
+.card-text::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.card-text::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+}
+
+.card-text::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
