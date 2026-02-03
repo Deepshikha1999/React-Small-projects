@@ -1,10 +1,10 @@
 import "./../styles/Recursion.css";
 import { useEffect, useRef, useState } from "react";
-import endFlag from "./../assets/endFlag.png";
-import startFlag from "./../assets/startFlag.png";
-import triskele from "./../assets/triskele.png";
-import bricks from "./../assets/line.png";
-import player from "./../assets/pacman.png";
+import endFlag from "../assets/endFlag.png";
+import startFlag from "../assets/startFlag.png";
+import triskele from "../assets/triskele.png";
+import bricks from "../assets/line.png";
+import player from "../assets/pacman.png";
 
 
 const N = 15;

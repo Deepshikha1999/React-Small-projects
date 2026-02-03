@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import "./../styles/SlidingWindow.css";
-import gold from "./../assets/gold.png";
+import gold from "../assets/gold.png";
 
 const createArray = (n = 15) => {
     return Array.from({ length: n }, (_, i) => {

@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import "./../styles/SelectionSort.css";
-import samurai from "./../assets/samurai.webp";
+import samurai from "../assets/samurai.webp";
 
 const createArray = (n = 10, picture) => {
     if (picture) {

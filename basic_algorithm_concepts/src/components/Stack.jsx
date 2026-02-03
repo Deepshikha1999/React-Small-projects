@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import "./../styles/Stack.css";
-import jar from "./../assets/door.png";
-import win from "./../assets/unlock.png";
+import jar from "../assets/door.png";
+import win from "../assets/unlock.png";
 
 const COLORS = {
     1: "#C50036",

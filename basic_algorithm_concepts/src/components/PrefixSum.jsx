@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 import "./../styles/PrefixSum.css";
-import PlayerImg from "./../assets/runPlayer.png";
-const obstacleImages = import.meta.glob('./../assets/obstacles/*.png', { eager: true });
-import backgroundImg from "./../assets/walkpath.jpg";
-import pathImg from "./../assets/walkpath_bottom.png";
-import cloud from "./../assets/cloud.png";
+import PlayerImg from "../assets/runPlayer.png";
+const obstacleImages = import.meta.glob('../assets/obstacles/*.png', { eager: true });
+import backgroundImg from "../assets/walkpath.jpg";
+import pathImg from "../assets/walkpath_bottom.png";
+import cloud from "../assets/cloud.png";
 
 const speed = 5;
 const gravity = 0.8;

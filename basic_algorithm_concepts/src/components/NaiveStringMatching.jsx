@@ -1,5 +1,5 @@
 import "./../styles/NaiveStringMatching.css";
-import kiki from "./../assets/1356532.png";
+import kiki from "../assets/1356532.png";
 import { useEffect, useRef, useState } from "react";
 
 const DEFAULT_VALUE = {

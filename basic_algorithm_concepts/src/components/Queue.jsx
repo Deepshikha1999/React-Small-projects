@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import "./../styles/Queue.css";
-import apple from "./../assets/apple_1010706.png";
+import apple from "../assets/apple_1010706.png";
 
 const g = 50;
 export default function Queue({ }) {

@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import "./../styles/CountSort.css";
-import anime from "./../assets/image.png";
+import anime from "../assets/image.png";
 
 const createArray = (n = 10, picture) => {
     if (picture) {

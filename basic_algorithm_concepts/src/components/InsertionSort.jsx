@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import "./../styles/InsertionSort.css";
-import anime from "./../assets/anime-oriental-landscape.jpg";
+import anime from "../assets/anime-oriental-landscape.jpg";
 
 const createArray = (n = 10, picture) => {
     if (picture) {

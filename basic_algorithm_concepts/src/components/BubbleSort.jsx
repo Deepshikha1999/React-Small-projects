@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import "./../styles/BubbleSort.css";
-import dragon from "./../assets/dragon.png";
+import dragon from "../assets/dragon.png";
 
 const createArray = (n = 10, picture) => {
     if (picture) {
