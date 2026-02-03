@@ -1,6 +1,7 @@
 import "./../styles/NaiveStringMatching.css";
 import kiki from "../assets/1356532.png";
 import { useEffect, useRef, useState } from "react";
+const URL = import.meta.env.VITE_LOCAL_URL ? import.meta.env.VITE_LOCAL_URL : "https://basicalgo-api.onrender.com";
 
 const DEFAULT_VALUE = {
     name: "DCS World Steam Edition",
@@ -9,7 +10,7 @@ const DEFAULT_VALUE = {
 
 const fetchGameDetails = async () => {
     try {
-        const res = await fetch("http://localhost:5001/api/gameDetails");
+        const res = await fetch(URL + "/api/gameDetails");
         const data = await res.json();
         return data;
     }
@@ -22,7 +23,7 @@ const fetchGameDetails = async () => {
 
 const fetchGameDescription = async (id) => {
     try {
-        const res = await fetch(`http://localhost:5001/api/game/${id}`);
+        const res = await fetch(URL + `/api/game/${id}`);
         const data = await res.json();
         return data;
     }

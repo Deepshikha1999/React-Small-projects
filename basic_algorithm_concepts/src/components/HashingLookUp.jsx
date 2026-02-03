@@ -1,10 +1,11 @@
 import { useEffect, useRef, useState } from "react";
 import "./../styles/HashingLookUp.css";
 import questMap from "../data/QuestMapper";
+const URL = import.meta.env.VITE_LOCAL_URL ? import.meta.env.VITE_LOCAL_URL : "https://basicalgo-api.onrender.com";
 
 const fetchARandomWord = async () => {
     try {
-        const res = await fetch("http://localhost:5001/api/word");
+        const res = await fetch(URL + "/api/word");
         const data = await res.json();
         return data;
     }
@@ -118,7 +119,7 @@ export default function HashingLookUp({ }) {
 
     const handleCheck = () => {
         if (!currentPage || !inputPassword) return;
-        if (questMap[KEYS[parseInt(currentPage)]].check(inputPassword,randomWord))
+        if (questMap[KEYS[parseInt(currentPage)]].check(inputPassword, randomWord))
             setCurrentPage(prev => parseInt(prev) == KEYS.length - 1 ? 0 + "" : (parseInt(prev) + 1) + "")
     }
 
@@ -129,7 +130,7 @@ export default function HashingLookUp({ }) {
             <h1 className="Title">Hashing, Treasure hunting</h1>
             <div className="Message">{message}</div>
             <div className="InputPanel">
-                <input type="text" value={inputPassword} placeholder = "password" onChange={(e) => setInputPassword(e.target.value)} />
+                <input type="text" value={inputPassword} placeholder="password" onChange={(e) => setInputPassword(e.target.value)} />
                 <button onClick={handleCheck}>Done</button>
                 <button onClick={() => setStart(true)}>START</button>
             </div>
