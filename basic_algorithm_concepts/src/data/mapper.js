@@ -13,6 +13,7 @@ import Matrix from "../components/Matrix.jsx";
 import Queue from "../components/Queue.jsx";
 import Stack from "../components/Stack.jsx";
 import HashingLookUp from "../components/HashingLookUp.jsx";
+import Pallindrome from "../components/Pallindrome.jsx";
 
 const algo_helper = {
     "LinearSearch":{
@@ -74,6 +75,10 @@ const algo_helper = {
     "Hashing":{
         "name": "Hashing Lookup",
         "component": HashingLookUp
+    },
+    "Pallindrome":{
+        "name": "Pallindrome",
+        "component": Pallindrome
     }
 }
 

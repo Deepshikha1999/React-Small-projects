@@ -4,7 +4,7 @@ import algo_helper from './data/mapper';
 
 function App() {
 
-  const [selectedAlgo, setSelectedAlgo] = useState(null);
+  const [selectedAlgo, setSelectedAlgo] = useState("Pallindrome");
 
   const AlgoComponent = selectedAlgo ? algo_helper[selectedAlgo].component : null;
 
