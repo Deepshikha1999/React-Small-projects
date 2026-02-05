@@ -1,0 +1,14 @@
+.MergeSort {
+    padding: 2rem;
+    color: white;
+    background:
+        linear-gradient(0deg,
+        black);
+
+    width: 100%;
+    height: 100%;
+}
+
+#merge_sort_board {
+    height: 80%;
+}

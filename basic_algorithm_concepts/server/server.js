@@ -1,5 +1,5 @@
 import express from "express";
-import { getGameById, getRandomWordFromAPI, shareDetails } from "./gameService.js";
+import { getGameById, getRandomWordFromAPI, getSpyWordFromAPI, shareDetails } from "./gameService.js";
 import cors from "cors";
 
 const app = express();
@@ -38,6 +38,21 @@ app.get("/api/word", async (req, res) => {
         });
     }
 })
+
+app.get("/api/spyWord", async (req, res) => {
+    try {
+        const data = await getSpyWordFromAPI();
+        res.status(200).json(data);
+    }
+    catch (err) {
+        res.status(500).json({
+            message: err.message,
+            status: err.response?.status,
+            data: err.response?.data,
+        });
+    }
+})
+
 
 app.listen(5001, () => {
     console.log("Server running on port 5001");

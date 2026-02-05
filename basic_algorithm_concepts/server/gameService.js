@@ -101,3 +101,25 @@ export const getRandomWordFromAPI = async () => {
         throw err;
     }
 }
+
+export const getSpyWordFromAPI = async () => {
+    try {
+        let headers = {
+            "content-type": "application/json",
+            "Access-Control-Allow-Origin": "*"
+        };
+        const options = {
+            method: "GET",
+            url: " https://random-word-api.herokuapp.com/word?length=10&diff=2",
+            headers
+        }
+        const response = await axios.request(options);
+        if (!response?.data || !response?.data.status == HttpStatusCode.Ok) {
+            throw "data not found";
+        }
+        return response.data[0];
+    }
+    catch (err) {
+        throw err;
+    }
+}
