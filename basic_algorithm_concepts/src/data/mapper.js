@@ -15,6 +15,7 @@ import Stack from "../components/Stack.jsx";
 import HashingLookUp from "../components/HashingLookUp.jsx";
 import Pallindrome from "../components/Pallindrome.jsx";
 import MergeSort from "../components/MergeSort.jsx";
+import QuickSort from "../components/QuickSort.jsx";
 
 const algo_helper = {
     "LinearSearch":{
@@ -84,6 +85,10 @@ const algo_helper = {
     "MergeSort":{
         "name": "Merge Sort",
         "component": MergeSort
+    },
+    "QuickSort":{
+        "name": "Quick Sort",
+        "component" : QuickSort
     }
 }
 

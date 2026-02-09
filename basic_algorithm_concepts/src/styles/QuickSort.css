@@ -1,0 +1,19 @@
+.QuickSort {
+    padding: 2rem;
+    color: black;
+    background:
+        linear-gradient(0deg,
+            rgba(0, 0, 0, 0.4),
+            rgba(0, 0, 0, 0.6)),
+        url("../assets/ChaosClerk/bg1.jpg");
+
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    width: 100%;
+    height: 100%;
+}
+
+#quick_sort_board {
+    height: 80%;
+}
