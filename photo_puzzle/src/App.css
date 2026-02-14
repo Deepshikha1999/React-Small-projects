@@ -1,0 +1,48 @@
+.App {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0px;
+}
+
+.List {}
+
+.bubble {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  width: 400px;
+  height: 50px;
+  font-family: "Irish Grover", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  font-size: xx-large;
+  padding: 10px 20px;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  backdrop-filter: blur(15px);
+  transition: all 0.3s ease;
+}
+
+.bubble:hover,
+.bubble:active {
+  color: yellow;
+  transform: scale(1.05);
+}
+
+
+.meddon-regular {
+  font-family: "Meddon", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.irish-grover-regular {
+  font-family: "Irish Grover", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
