@@ -24,7 +24,7 @@ const styles = {
         backgroundColor: "#000",
         touchAction: 'none', // Critical: Tells the browser NOT to scroll the page when touching this element
         userSelect: 'none',  // Prevents the "copy/paste" highlight from appearing
-        WebkitUserSelect: 'none',
+        WebkitTapHighlightColor: 'transparent',
     },
     controlBar: {
         height: '100px',

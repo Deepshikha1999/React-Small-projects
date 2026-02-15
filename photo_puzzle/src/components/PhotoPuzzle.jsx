@@ -138,10 +138,17 @@ export default function PhotoPuzzle({ }) {
         const canvas = gameCanvasRef.current;
         const rect = canvas.getBoundingClientRect();
 
-        // Calculate coordinates relative to the canvas scale
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        const [offsetX, offsetY] = [x, y];
+        // 1. Get relative CSS coordinates
+        const clientX = e.clientX || (e.touches && e.touches[0].clientX);
+        const clientY = e.clientY || (e.touches && e.touches[0].clientY);
+
+        const cssX = clientX - rect.left;
+        const cssY = clientY - rect.top;
+
+        // 2. Scale CSS coordinates to Internal Canvas coordinates
+        // This is the missing link!
+        const offsetX = (cssX / rect.width) * canvas.width;
+        const offsetY = (cssY / rect.height) * canvas.height;
 
         const ctx = ctxRef.current;
         const j_arr = jumbledImageArrayRef.current;
