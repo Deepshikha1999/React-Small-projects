@@ -127,10 +127,21 @@ export default function PhotoPuzzle({ }) {
     }
 
     const handleShuffle = (e) => {
-        const { offsetX, offsetY } = e.nativeEvent;
+
+
         if (!imageRef.current || !gameCanvasRef.current || !ctxRef.current || !startGame) {
             return;
         }
+
+        e.preventDefault();
+
+        const canvas = gameCanvasRef.current;
+        const rect = canvas.getBoundingClientRect();
+
+        // Calculate coordinates relative to the canvas scale
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const [offsetX, offsetY] = [x, y];
 
         const ctx = ctxRef.current;
         const j_arr = jumbledImageArrayRef.current;
