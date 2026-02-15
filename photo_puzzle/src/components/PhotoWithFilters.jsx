@@ -57,8 +57,8 @@ export default function PhotoWithFilters({ }) {
 
         if (!video || !canvas) return;
 
-        canvas.width = 200;
-        canvas.height = (video.videoHeight/video.videoWidth) * 200;
+        canvas.width = 300;
+        canvas.height = (video.videoHeight/video.videoWidth) * 300;
         photoSize.current = {
             width: canvas.width,
             height: canvas.height
