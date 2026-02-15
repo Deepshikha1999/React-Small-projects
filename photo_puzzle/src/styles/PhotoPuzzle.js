@@ -27,18 +27,32 @@ const styles = {
         WebkitTapHighlightColor: 'transparent',
     },
     controlBar: {
-        height: '10vh',
+        height: '80px', // Fixed height is safer for bottom bars
+        minHeight: '80px',
         backgroundColor: '#D9C99A',
         display: 'flex',
         justifyContent: 'space-evenly',
         alignItems: 'center',
         width: '100%',
+        
+        // Critical for Mobile:
+        position: 'fixed', // Pins it to the bottom
+        bottom: 0,
+        left: 0,
+        zIndex: 1000,
+        
+        // safe-area-inset adds extra padding ONLY on phones with notches
+        paddingBottom: 'calc(env(safe-area-inset-bottom) + 10px)', 
+        boxShadow: '0 -2px 10px rgba(0,0,0,0.2)', // Adds depth so it pops against the preview
     },
+    
     icon: {
-        width: '2.5rem',
-        height: '2.5rem',
+        width: '3.5rem',  // Increased size for easier finger taps
+        height: '3.5rem',
         cursor: 'pointer',
-        padding: "0.5rem"
+        padding: "0.8rem",
+        objectFit: 'contain', // Prevents icon distortion
+        transition: 'transform 0.1s ease', // Feedback when tapped
     },
     startBtn: {
         width: '100px', // The start button is usually larger
