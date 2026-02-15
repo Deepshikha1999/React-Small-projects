@@ -230,7 +230,7 @@ export default function PhotoPuzzle({ }) {
                     <canvas
                         ref={gameCanvasRef}
                         style={styles.video}
-                        onClick={handleShuffle}></canvas>
+                        onMouseDown={handleShuffle}></canvas>
                 }
             </div>
 

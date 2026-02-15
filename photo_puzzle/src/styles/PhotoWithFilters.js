@@ -30,6 +30,7 @@ const styles = {
         backgroundColor: "#fff",
         objectFit: "contain",
         display: "block",
+        transform: "scaleX(-1)"
     },
 
     video: {
