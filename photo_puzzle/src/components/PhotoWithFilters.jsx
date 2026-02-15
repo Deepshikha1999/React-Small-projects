@@ -26,6 +26,7 @@ export default function PhotoWithFilters({ }) {
     const [currentCat, setCurrentCat] = useState(0);
     const videoRef = useRef(null);
     const tempCanvas = useRef(null);
+    const photoSize = useRef(null);
 
     useEffect(() => {
         if (photo) {
@@ -56,8 +57,12 @@ export default function PhotoWithFilters({ }) {
 
         if (!video || !canvas) return;
 
-        canvas.width = video.videoWidth;
-        canvas.height = video.videoHeight;
+        canvas.width = 200;
+        canvas.height = 300;
+        photoSize.current = {
+            width: canvas.width,
+            height: canvas.height
+        }
         const ctx = canvas.getContext("2d");
         ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
 
@@ -106,17 +111,15 @@ export default function PhotoWithFilters({ }) {
         ctx.clearRect(0, 0, width, height);
         ctx.drawImage(bgImg, 0, 0, width, height);
 
-        // Drawing the Frame
-        const [fw, fh] = [3 * width / 4, 3 * height / 4];
-        const [fx, fy] = [width / 2 - fw / 2, height / 2 - fh / 2];
+        if (photo && photoSize.current) {
+            // Drawing the Frame
+            const [fw, fh] = [photoSize.current.width, photoSize.current.height];
+            const [fx, fy] = [width / 2 - fw / 2, height / 2 - fh / 2];
 
-        ctx.fillStyle = "#F0F1F2";
-        ctx.beginPath();
-        ctx.roundRect(fx, fy, fw, fh, 16);
-        ctx.fill();
-
-        if (photo) {
-            // Pre-create the image object to avoid the 'onload' inside the draw loop
+            ctx.fillStyle = "#F0F1F2";
+            ctx.beginPath();
+            ctx.roundRect(fx, fy, fw, fh, 16);
+            ctx.fill();
             const userImg = new Image();
             userImg.src = photo;
             userImg.onload = () => {
