@@ -27,7 +27,7 @@ const styles = {
         WebkitTapHighlightColor: 'transparent',
     },
     controlBar: {
-        height: '100px',
+        height: '10vh',
         backgroundColor: '#D9C99A',
         display: 'flex',
         justifyContent: 'space-evenly',
@@ -35,10 +35,10 @@ const styles = {
         width: '100%',
     },
     icon: {
-        width: '50px',
-        height: '50px',
+        width: '2.5rem',
+        height: '2.5rem',
         cursor: 'pointer',
-        padding: "10px"
+        padding: "0.5rem"
     },
     startBtn: {
         width: '100px', // The start button is usually larger

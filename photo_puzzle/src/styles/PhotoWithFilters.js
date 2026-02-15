@@ -63,7 +63,7 @@ const styles = {
     },
 
     controlBar: {
-        height: '90px',
+        height: '10vh',
         backgroundColor: '#D9C99A',
         display: 'flex',
         justifyContent: 'space-evenly',
@@ -73,10 +73,10 @@ const styles = {
     },
 
     icon: {
-        width: '55px',
-        height: '55px',
+        width: '2.5rem',
+        height: '2.5rem',
         cursor: 'pointer',
-        padding: "12px"
+        padding: "0.5rem"
     },
     info: {
         color: '#000',
