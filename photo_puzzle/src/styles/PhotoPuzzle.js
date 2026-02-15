@@ -21,7 +21,10 @@ const styles = {
         maxHeight: "100%",
         // borderRadius: "12px",
         boxShadow: "0 4px 20px rgba(0,0,0,0.5)",
-        backgroundColor: "#000"
+        backgroundColor: "#000",
+        touchAction: 'none', // Critical: Tells the browser NOT to scroll the page when touching this element
+        userSelect: 'none',  // Prevents the "copy/paste" highlight from appearing
+        WebkitUserSelect: 'none',
     },
     controlBar: {
         height: '100px',
