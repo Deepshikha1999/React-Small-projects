@@ -296,6 +296,11 @@ export default function MakeYourOwnCard({ }) {
                 onPointerMove={moveSticker}
                 onPointerUp={() => setDraggingIdx(null)}
                 onPointerLeave={() => setDraggingIdx(null)}
+                style={{ 
+                    touchAction: 'none', // STOPS page scrolling while touching the canvas
+                    userSelect: 'none',  // PREVENTS text selection highlighting
+                    WebkitUserSelect: 'none'
+                }}
             ></canvas>
         </div>
     )
