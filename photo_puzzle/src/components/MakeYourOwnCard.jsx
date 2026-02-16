@@ -292,10 +292,10 @@ export default function MakeYourOwnCard({ }) {
             <canvas
                 className="Card"
                 ref={canvasRef}
-                onMouseDown={handlePointerDown}
-                onMouseMove={moveSticker}
-                onMouseUp={() => setDraggingIdx(null)}
-                onMouseLeave={() => setDraggingIdx(null)}
+                onPointerDown={handlePointerDown}
+                onPointerMove={moveSticker}
+                onPointerUp={() => setDraggingIdx(null)}
+                onPointerLeave={() => setDraggingIdx(null)}
             ></canvas>
         </div>
     )
