@@ -33,16 +33,3 @@
   color: yellow;
   transform: scale(1.05);
 }
-
-
-.meddon-regular {
-  font-family: "Meddon", cursive;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.irish-grover-regular {
-  font-family: "Irish Grover", system-ui;
-  font-weight: 400;
-  font-style: normal;
-}

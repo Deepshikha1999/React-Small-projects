@@ -1,0 +1,29 @@
+.UploadContainer {
+    padding: 20px;
+    text-align: center;
+    background: #252525;
+    border-radius: 12px;
+}
+
+.CustomUploadBtn {
+    display: inline-block;
+    padding: 15px 30px;
+    background: #D9C99A; /* Your Gold color */
+    color: #1a1a1a;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    border: 2px dashed #1a1a1a;
+}
+
+.CustomUploadBtn:hover {
+    background: #f0e0b0;
+    transform: translateY(-2px);
+}
+
+.UploadContainer p {
+    color: #666;
+    font-size: 0.8rem;
+    margin-top: 10px;
+}

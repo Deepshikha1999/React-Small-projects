@@ -1,4 +1,5 @@
 import ClickPic from "../components/ClickPic";
+import MakeYourOwnCard from "../components/MakeYourOwnCard";
 import PhotoPuzzle from "../components/PhotoPuzzle";
 import PhotoWithFilters from "../components/PhotoWithFilters";
 import VideoRecord from "../components/VideoRecord";
@@ -19,6 +20,10 @@ const list = {
     "PhotoWithFilters":{
         "name": "Photo Cards",
         component: <PhotoWithFilters/>
+    },
+    "MakeYourOwnCard":{
+        "name": "Create your Greeting card",
+        component: <MakeYourOwnCard/>
     }
 };
 

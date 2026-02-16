@@ -5,7 +5,7 @@ import BackFunction from './components/BackFunction';
 
 function App() {
 
-  const [selectedPage, setSelectedPage] = useState(null);
+  const [selectedPage, setSelectedPage] = useState("MakeYourOwnCard");
 
   return (
     <div className="App">
